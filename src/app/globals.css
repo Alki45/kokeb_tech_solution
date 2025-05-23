@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --accent: #4f46e5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --accent: #8b5cf6;
+  }
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)] min-h-screen antialiased;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transitions for interactive elements */
+a,
+button,
+input,
+textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Remove default focus ring and improve accessibility */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  @apply ring-2 ring-indigo-500 ring-offset-2;
+}
+
+/* Optional: Styling placeholders */
+::placeholder {
+  @apply text-gray-400;
+}
