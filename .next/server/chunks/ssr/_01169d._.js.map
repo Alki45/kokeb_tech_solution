@@ -1,9 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///home/alki/Astu_project/kokeb_tech_solution/src/app/layout.tsx"],"sourcesContent":["// app/layout.tsx\nimport './globals.css';\nimport Navbar from '@/components/Navbar';\nimport Footer from '@/components/Footer';\n\nexport default function RootLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\">\n      <body className=\"font-sans bg-gray-50 text-gray-800\">\n        <Navbar />\n        <main className=\"min-h-screen px-4 py-8\">{children}</main>\n        <Footer />\n      </body>\n    </html>\n  );\n}"],"names":[],"mappings":"AAAA,iBAAiB;;;;;;;;;;;;;;;;;;;AAKF,SAAS,WAAW,EAAE,QAAQ,EAAiC;IAC5E,qBACE,6WAAC;QAAK,MAAK;kBACT,cAAA,6WAAC;YAAK,WAAU;;8BACd,6WAAC;;;;;8BACD,6WAAC;oBAAK,WAAU;8BAA0B;;;;;;8BAC1C,6WAAC;;;;;;;;;;;;;;;;AAIT"}},
-    {"offset": {"line": 62, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
-    {"offset": {"line": 73, "column": 0}, "map": {"version":3,"sources":["file:///home/alki/Astu_project/kokeb_tech_solution/node_modules/.pnpm/next%4015.1.8_react-dom%4019.1.0_react%4019.1.0__react%4019.1.0/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-rsc'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,qMAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0]}},
-    {"offset": {"line": 75, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

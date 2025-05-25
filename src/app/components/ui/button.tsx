@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 
-type ButtonProps = {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'outline' | 'solid' | string;  // add all variants you want
   asChild?: boolean;
-  className?: string;
-  children: React.ReactNode;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+  children: ReactNode;
+}
 
-export function Button({ asChild = false, className = '', children, ...props }: ButtonProps) {
-  const Component: any = asChild ? 'span' : 'button';
+const Button: React.FC<ButtonProps> = ({ variant = 'solid', asChild, children, ...rest }) => {
+  // Use variant to apply styles, example:
+  const className =
+    variant === 'outline'
+      ? 'border border-indigo-600 text-indigo-700'
+      : 'bg-indigo-600 text-white';
 
   return (
-    <Component
-      className={`bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all duration-300 ${className}`}
-      {...props}
-    >
+    <button className={className} {...rest}>
       {children}
-    </Component>
+    </button>
   );
-}
+};
+
+export default Button;
+

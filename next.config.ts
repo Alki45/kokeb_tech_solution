@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+const isProd = process.env.NODE_ENV === 'production';
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  eslint: { ignoreDuringBuilds: true },
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/kokeb_tech_solution' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/kokeb_tech_solution/' : '',
+  trailingSlash: true,
 };
 
-export default nextConfig;
+
+module.exports = nextConfig;

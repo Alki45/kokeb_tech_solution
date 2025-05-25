@@ -48,3 +48,34 @@ textarea {
 ::placeholder {
   @apply text-gray-400;
 }
+@keyframes waveMotion {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+}
+
+.animate-wave {
+  animation: waveMotion 6s ease-in-out infinite;
+}
+@keyframes floatStars {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
+@layer utilities {
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 6s infinite ease-in-out;
+  }
+}
+

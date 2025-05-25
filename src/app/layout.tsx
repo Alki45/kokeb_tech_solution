@@ -1,6 +1,6 @@
 // app/layout.tsx
 import './globals.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
 import { Inter } from 'next/font/google';
 
