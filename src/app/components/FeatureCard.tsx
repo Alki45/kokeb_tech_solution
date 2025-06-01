@@ -8,8 +8,8 @@ export default function FeatureCard({ title, desc, index }: { title: string; des
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5 + index * 0.2, duration: 0.8 }}
     >
-      <h3 className="text-xl font-semibold text-indigo-900 dark:text-black mb-2">{title}</h3>
-      <p className="text-gray-700 dark:text-black-300 text-base">{desc}</p>
+      <h3 className="text-xl font-semibold text-indigo-900 dark:text-white mb-2">{title}</h3>
+      <p className="text-white-700 dark:text-white-300 text-base">{desc}</p>
     </motion.div>
   );
 }

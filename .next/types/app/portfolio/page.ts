@@ -1,4 +1,4 @@
-// File: /home/alki/Astu_project/kokeb_tech_solution/src/app/portfolio/page.tsx
+// File: /home/alki/Project/kokeb_tech_solution/src/app/portfolio/page.tsx
 import * as entry from '../../../../src/app/portfolio/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

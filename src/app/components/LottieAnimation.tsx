@@ -1,24 +1,20 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import lottie from 'lottie-web';
+import { Player } from '@lottiefiles/react-lottie-player';
 
-export default function LottieAnimation({ animationPath }: { animationPath: string }) {
-  const container = useRef(null);
+type Props = {
+  animationPath: string;
+};
 
-  useEffect(() => {
-    if (container.current) {
-      const instance = lottie.loadAnimation({
-        container: container.current,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: animationPath,
-      });
-
-      return () => instance.destroy();
-    }
-  }, [animationPath]);
-
-  return <div ref={container} className="w-full h-[500px]" />;
+export default function LottieAnimation({ animationPath }: Props) {
+  return (
+    <div className="w-full h-full flex justify-center items-center">
+      <Player
+        autoplay
+        loop
+        src={animationPath}
+        style={{ height: '100%', width: '100%' }}
+      />
+    </div>
+  );
 }

@@ -15,7 +15,7 @@ export default function HeroSection() {
 
       <div className="text-center md:text-left">
         <motion.h1
-          className="text-4xl md:text-6xl font-extrabold text-indigo-800 dark:text-black font-serif leading-tight"
+          className="text-4xl md:text-6xl font-extrabold text-white-800 dark:text-white font-serif leading-tight"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
@@ -24,7 +24,7 @@ export default function HeroSection() {
           Through Innovation
         </motion.h1>
         <motion.p
-          className="text-lg md:text-xl text-gray-700 dark:text-black-300 max-w-2xl mt-6"
+          className="text-lg md:text-xl text-white-700 dark:text-white-300 max-w-2xl mt-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 1 }}
@@ -39,12 +39,12 @@ export default function HeroSection() {
           transition={{ delay: 0.6, duration: 1 }}
         >
           <Button asChild>
-            <a href="/services" className="text-lg px-8 py-3 rounded-xl bg-indigo-600 text-black hover:bg-indigo-700 transition-all duration-300">
+            <a href="/services" className="text-lg px-8 py-3 rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition-all duration-300">
               Explore Services
             </a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="/contact" className="text-lg px-8 py-3 rounded-xl border border-indigo-600 text-indigo-700 dark:text-black hover:bg-indigo-50 dark:hover:bg-gray-700 transition-all duration-300">
+            <a href="/contact" className="text-lg px-8 py-3 rounded-xl border border-indigo-600 text-white-700 dark:text-black hover:bg-indigo-50 dark:hover:bg-gray-700 transition-all duration-300">
               Get In Touch
             </a>
           </Button>
