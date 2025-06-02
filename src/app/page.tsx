@@ -13,12 +13,12 @@ export default function HomePage() {
 
       {/* Animated Background Blobs */}
       <motion.div
-        className="absolute top-[-100px] left-[-80px] w-[300px] h-[300px] bg-cyan-400 rounded-full opacity-20 blur-3xl"
+        className="absolute top-[-100px] left-[-80px] w-[300px] h-[300px] bg-cyan-400 rounded-full opacity-20 blur-3xl z-0"
         animate={{ x: [0, 120, -60], y: [0, 80, -40] }}
         transition={{ repeat: Infinity, duration: 15, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute bottom-[-100px] right-[-80px] w-[400px] h-[400px] bg-purple-600 rounded-full opacity-20 blur-3xl"
+        className="absolute bottom-[-100px] right-[-80px] w-[400px] h-[400px] bg-purple-600 rounded-full opacity-20 blur-3xl z-0"
         animate={{ x: [0, -100, 50], y: [0, -60, 90] }}
         transition={{ repeat: Infinity, duration: 18, ease: 'easeInOut' }}
       />
@@ -28,24 +28,24 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="z-10 relative"
+        className="relative z-10"
       >
         <HeroSection />
       </motion.div>
 
-      {/* Feature Cards */}
+      {/* Features */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-32 z-10 relative"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-32 relative z-10"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
-        {features.map((item, i) => (
+        {features?.map((item, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
           >
             <FeatureCard index={i} title={item.title} desc={item.desc} />
@@ -55,22 +55,22 @@ export default function HomePage() {
 
       {/* Lottie Animation */}
       <motion.div
-        className="max-w-6xl mx-auto mt-28 z-10"
+        className="max-w-6xl mx-auto mt-28 z-10 relative"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 1.2 }}
       >
         <div className="w-full h-[520px] bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-6">
-          <LottieAnimation animationPath="https://lottie.host/0b56a73e-f91e-4cb1-812e-4f1e1d5d3cb4/QMOBMroN2n.json" />
+          <LottieAnimation animationPath="https://assets7.lottiefiles.com/packages/lf20_puciaact.json" />
         </div>
       </motion.div>
 
       {/* Quote Form */}
       <motion.div
+        className="mt-28 relative z-10"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="mt-28 z-10 relative"
       >
         <QuoteForm />
       </motion.div>
@@ -86,7 +86,7 @@ export default function HomePage() {
       </motion.div>
 
       {/* SVG Divider */}
-      <div className="absolute bottom-0 left-0 w-full">
+      <div className="absolute bottom-0 left-0 w-full z-0">
         <svg viewBox="0 0 1440 320" className="w-full h-24">
           <path
             fill="#1f2937"

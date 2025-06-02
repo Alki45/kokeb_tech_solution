@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+
     "build": "next build",
     "start": "next start",
-    "deploy": "npm run build && gh-pages -d out",
+    "deploy": "next build && gh-pages -d out -b gh-pages",
     "lint": "next lint"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "framer-motion": "^12.12.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.511.0",
     "next": "^15.1.8",
     "react": "^19.1.0",

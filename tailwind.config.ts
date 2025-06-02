@@ -42,8 +42,8 @@ const config: Config = {
           
         },
         twinkle: {
-          "0%, 100%": { opacity: 0.2 },
-          "50%": { opacity: 1 },
+        "0%, 100%": { opacity: "0.2" },
+        "50%": { opacity: "1" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },

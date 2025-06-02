@@ -1,12 +1,13 @@
+
+
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/kokeb_tech_solution' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/kokeb_tech_solution/' : '',
+  basePath: isProd ? '/kokeb_tech_solution' : '',
+  assetPrefix: isProd ? '/kokeb_tech_solution/' : '',
   trailingSlash: true,
 };
-
 
 module.exports = nextConfig;

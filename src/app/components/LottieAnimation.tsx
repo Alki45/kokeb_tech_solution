@@ -1,20 +1,39 @@
+// components/LottieAnimation.tsx
 'use client';
 
-import { Player } from '@lottiefiles/react-lottie-player';
+import React from 'react';
+import Lottie from 'lottie-react';
 
-type Props = {
+interface LottieAnimationProps {
   animationPath: string;
-};
+  className?: string;
+}
 
-export default function LottieAnimation({ animationPath }: Props) {
+export default function LottieAnimation({ animationPath, className }: LottieAnimationProps) {
+  const [animationData, setAnimationData] = React.useState<any>(null);
+
+  React.useEffect(() => {
+    async function fetchAnimation() {
+      try {
+        const res = await fetch(animationPath);
+        if (!res.ok) throw new Error('Failed to fetch animation JSON');
+        const json = await res.json();
+        setAnimationData(json);
+      } catch (error) {
+        console.error('Lottie animation loading error:', error);
+      }
+    }
+    fetchAnimation();
+  }, [animationPath]);
+
+  if (!animationData) return null;
+
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <Player
-        autoplay
-        loop
-        src={animationPath}
-        style={{ height: '100%', width: '100%' }}
-      />
-    </div>
+    <Lottie
+      animationData={animationData}
+      loop={true}
+      className={className}
+      style={{ pointerEvents: 'none' }}
+    />
   );
 }
